@@ -1,0 +1,241 @@
+:root {
+  --font-ui: "Monaspace Argon", "Monaspace Neon", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Accent scales */
+  --accent-purple-100: #f1edff;
+  --accent-purple-200: #d5ccff;
+  --accent-purple-300: #afa0ff;
+  --accent-purple-400: #9588ff;
+  --accent-purple-500: #7f77dd;
+  --accent-purple-600: #6c63c2;
+  --accent-purple-700: #584fa3;
+
+  --accent-red-100: #ffe8ee;
+  --accent-red-200: #ffc7d6;
+  --accent-red-300: #ff9db7;
+  --accent-red-400: #f57597;
+  --accent-red-500: #e34f79;
+  --accent-red-600: #c93961;
+  --accent-red-700: #a7234a;
+
+  --accent-blue-100: #e6f6ff;
+  --accent-blue-200: #c0e7ff;
+  --accent-blue-300: #8fd5ff;
+  --accent-blue-400: #54bef4;
+  --accent-blue-500: #2f9cd8;
+  --accent-blue-600: #1d7eb7;
+  --accent-blue-700: #106093;
+
+  --accent-orange-100: #fff0e5;
+  --accent-orange-200: #ffd6bd;
+  --accent-orange-300: #ffb489;
+  --accent-orange-400: #ef8752;
+  --accent-orange-500: #d85a30;
+  --accent-orange-600: #b94121;
+  --accent-orange-700: #922e19;
+
+  --accent-teal-100: #ddfff2;
+  --accent-teal-200: #b5f7df;
+  --accent-teal-300: #7fecc8;
+  --accent-teal-400: #41cca0;
+  --accent-teal-500: #1d9e75;
+  --accent-teal-600: #0f805d;
+  --accent-teal-700: #066447;
+
+  /* Standard semantic scales (not the same as accent scale) */
+  --status-error-300: #ff9eb1;
+  --status-error-500: #e43f5a;
+  --status-error-700: #ad1730;
+
+  --status-warning-300: #ffd985;
+  --status-warning-500: #f6b21a;
+  --status-warning-700: #a16600;
+
+  --status-success-300: #9df0bd;
+  --status-success-500: #23b26d;
+  --status-success-700: #0d7a47;
+}
+
+:root,
+[data-theme="dark"] {
+  --neutral-0: #f6f2ff;
+  --neutral-1: #ccc0e6;
+  --neutral-2: #8d7eb5;
+  --neutral-3: #5a4e78;
+  --neutral-4: #2f254c;
+  --neutral-5: #1e1536;
+  --neutral-6: #120b24;
+
+  --color-bg: var(--neutral-5);
+  --color-text: var(--neutral-0);
+  --surface-2: var(--neutral-4);
+  --surface-3: var(--neutral-6);
+  --muted-text: var(--neutral-1);
+  --border-strong: #4a3f68;
+}
+
+[data-theme="light"] {
+  --neutral-0: #120b24;
+  --neutral-1: #2f254c;
+  --neutral-2: #5a4e78;
+  --neutral-3: #8d7eb5;
+  --neutral-4: #ccc0e6;
+  --neutral-5: #f6f2ff;
+  --neutral-6: #ffffff;
+
+  --color-bg: var(--neutral-5);
+  --color-text: var(--neutral-0);
+  --surface-2: var(--neutral-4);
+  --surface-3: var(--neutral-6);
+  --muted-text: #4d3d73;
+  --border-strong: #ae9ed1;
+}
+
+[data-accent="purple"] {
+  --accent-100: var(--accent-purple-100);
+  --accent-200: var(--accent-purple-200);
+  --accent-300: var(--accent-purple-300);
+  --accent-400: var(--accent-purple-400);
+  --accent-primary: var(--accent-purple-500);
+  --accent-600: var(--accent-purple-600);
+  --accent-700: var(--accent-purple-700);
+}
+
+[data-accent="red"] {
+  --accent-100: var(--accent-red-100);
+  --accent-200: var(--accent-red-200);
+  --accent-300: var(--accent-red-300);
+  --accent-400: var(--accent-red-400);
+  --accent-primary: var(--accent-red-500);
+  --accent-600: var(--accent-red-600);
+  --accent-700: var(--accent-red-700);
+}
+
+[data-accent="blue"] {
+  --accent-100: var(--accent-blue-100);
+  --accent-200: var(--accent-blue-200);
+  --accent-300: var(--accent-blue-300);
+  --accent-400: var(--accent-blue-400);
+  --accent-primary: var(--accent-blue-500);
+  --accent-600: var(--accent-blue-600);
+  --accent-700: var(--accent-blue-700);
+}
+
+[data-accent="orange"] {
+  --accent-100: var(--accent-orange-100);
+  --accent-200: var(--accent-orange-200);
+  --accent-300: var(--accent-orange-300);
+  --accent-400: var(--accent-orange-400);
+  --accent-primary: var(--accent-orange-500);
+  --accent-600: var(--accent-orange-600);
+  --accent-700: var(--accent-orange-700);
+}
+
+[data-accent="teal"] {
+  --accent-100: var(--accent-teal-100);
+  --accent-200: var(--accent-teal-200);
+  --accent-300: var(--accent-teal-300);
+  --accent-400: var(--accent-teal-400);
+  --accent-primary: var(--accent-teal-500);
+  --accent-600: var(--accent-teal-600);
+  --accent-700: var(--accent-teal-700);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  background: radial-gradient(circle at 10% 0%, color-mix(in oklab, var(--accent-primary) 16%, var(--color-bg)), var(--color-bg));
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.container { width: min(1120px, 92vw); margin: 0 auto; }
+.header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: color-mix(in oklab, var(--color-bg) 88%, transparent);
+  border-bottom: 1px solid var(--border-strong);
+  z-index: 10;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+select,
+button {
+  font: inherit;
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  color: var(--color-text);
+  background: var(--surface-2);
+  padding: 0.5rem 0.75rem;
+}
+
+.hero { padding: 4rem 0 2rem; }
+
+h1, h2, h3 { line-height: 1.1; letter-spacing: 0.02em; }
+
+.heading-split .base { color: var(--color-text); }
+.heading-split .accent { color: var(--accent-primary); }
+
+.lead { color: var(--muted-text); max-width: 72ch; }
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.section { padding: 1.5rem 0 2.25rem; }
+
+.swatch {
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.chip { height: 96px; border-bottom: 1px solid color-mix(in oklab, #000 30%, transparent); }
+.swatch-content { padding: 0.8rem; font-size: 0.88rem; }
+.swatch-content p { margin: 0.25rem 0; overflow-wrap: anywhere; }
+
+.controls { display: flex; gap: 0.45rem; margin-top: 0.55rem; flex-wrap: wrap; }
+.copy-btn:hover { border-color: var(--accent-primary); }
+
+.card-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  background: linear-gradient(160deg, var(--surface-2), var(--surface-3));
+  border-radius: 16px;
+  border: 1px solid var(--border-strong);
+  padding: 1rem;
+}
+
+.pill {
+  display: inline-block;
+  background: color-mix(in oklab, var(--accent-primary) 25%, var(--surface-3));
+  color: var(--accent-100);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.cta { background: var(--accent-primary); color: #fff; border: none; }
+.cta.alt { background: transparent; border: 1px solid var(--accent-primary); color: var(--accent-primary); }
+
+footer { color: var(--muted-text); padding: 2.5rem 0; font-size: 0.92rem; }
+
+.small { font-size: 0.85rem; color: var(--muted-text); }

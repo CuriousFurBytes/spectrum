@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-accent="purple">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spectrum Theme System</title>
+    <link rel="stylesheet" href="spectrum-theme.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container toolbar">
+        <strong class="heading-split"><span class="base">Spec</span><span class="accent">trum</span></strong>
+        <div>
+          <label for="theme-select">Theme</label>
+          <select id="theme-select">
+            <option value="dark" selected>Dark</option>
+            <option value="light">Light</option>
+          </select>
+          <label for="accent-select">Accent</label>
+          <select id="accent-select">
+            <option value="purple" selected>Purple</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="orange">Orange</option>
+            <option value="teal">Teal</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1 class="heading-split"><span class="base">Spectrum</span> <span class="accent">Design System</span></h1>
+        <p class="lead">
+          Spectrum is a vibrant, high-contrast palette for UI and editor theming. Every color token is reusable across web surfaces,
+          VS Code themes, docs, dashboards, and brand systems. Light and dark modes mirror the same exact hex values in opposite semantic roles.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="heading-split"><span class="base">Base</span> <span class="accent">Colors</span></h2>
+        <p class="small">Use these as your structural layout colors for backgrounds, text, and layered surfaces.</p>
+        <div class="grid" id="base-grid"></div>
+      </section>
+
+      <section class="section">
+        <h2 class="heading-split"><span class="base">Accent</span> <span class="accent">System</span></h2>
+        <p class="small">The accent family powers links, highlights, focus rings, active states, and graph emphasis.</p>
+        <div class="grid" id="accent-grid"></div>
+      </section>
+
+      <section class="section">
+        <h2 class="heading-split"><span class="base">Standard</span> <span class="accent">Status Colors</span></h2>
+        <p class="small">Status colors remain independent from the accent scale so semantics always stay explicit.</p>
+        <div class="grid" id="status-grid"></div>
+      </section>
+
+      <section class="section">
+        <h2 class="heading-split"><span class="base">Theme</span> <span class="accent">Showcase</span></h2>
+        <div class="card-row">
+          <article class="card">
+            <span class="pill">Web UI</span>
+            <h3>Cards &amp; Components</h3>
+            <p>Use surface steps for hierarchy. Reserve accent-primary for active intent, not generic decoration.</p>
+            <button class="cta">Primary Action</button>
+            <button class="cta alt">Secondary Action</button>
+          </article>
+          <article class="card">
+            <span class="pill">IDE Theme</span>
+            <h3>Editor Mapping</h3>
+            <p>Map <code>color-bg</code> to editor background, <code>surface-2</code> to sidebars, and <code>accent-primary</code> to selection highlights.</p>
+            <ul>
+              <li>Keywords: accent-primary</li>
+              <li>Strings: accent-300</li>
+              <li>Errors: status-error-500</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="pill">Typography</span>
+            <h3>Readable Contrast</h3>
+            <p>
+              Monaspace Argon is the preferred face. Base text and muted text are tuned to remain readable on both theme backgrounds.
+              Body copy should use base text and helper copy uses muted text.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">Built for Spectrum: energetic colors, balanced hierarchy, and implementation-ready color tokens.</div>
+    </footer>
+
+    <script>
+      const root = document.documentElement;
+      const themeSelect = document.getElementById("theme-select");
+      const accentSelect = document.getElementById("accent-select");
+
+      const palette = {
+        base: [
+          ["Background", "--color-bg", "Main app background, editor canvas, large shells."],
+          ["Text", "--color-text", "Primary body and heading text color."],
+          ["Surface 2", "--surface-2", "Cards, side panels, tab strips, code blocks."],
+          ["Surface 3", "--surface-3", "Deep nested surfaces, overlays, and elevated blocks."],
+        ],
+        accent: [
+          ["Accent 100", "--accent-100", "Subtle tint backgrounds and passive highlights."],
+          ["Accent 200", "--accent-200", "Hover tints and low-priority graph fills."],
+          ["Accent 300", "--accent-300", "Selections, tags, and badges."],
+          ["Accent 400", "--accent-400", "Interactive hover for primary links and chips."],
+          ["Accent Primary", "--accent-primary", "Primary action, important links, focus rings."],
+          ["Accent 600", "--accent-600", "Pressed states and denser controls."],
+          ["Accent 700", "--accent-700", "Text-on-light accents or deep emphasis."],
+        ],
+        status: [
+          ["Error 300", "--status-error-300", "Error backgrounds and dismissed alerts."],
+          ["Error 500", "--status-error-500", "Critical errors and destructive actions."],
+          ["Error 700", "--status-error-700", "Error text over light surfaces."],
+          ["Warning 300", "--status-warning-300", "Warning backgrounds and soft notices."],
+          ["Warning 500", "--status-warning-500", "Primary warning content and caution UI."],
+          ["Warning 700", "--status-warning-700", "Dense warning outlines and text."],
+          ["Success 300", "--status-success-300", "Success fills and subtle confirmations."],
+          ["Success 500", "--status-success-500", "Success actions and positive states."],
+          ["Success 700", "--status-success-700", "Success text on light blocks."],
+        ],
+      };
+
+      function toRgb(hex) {
+        const h = hex.replace("#", "");
+        const bigint = parseInt(h, 16);
+        const r = (bigint >> 16) & 255;
+        const g = (bigint >> 8) & 255;
+        const b = bigint & 255;
+        return `rgb(${r} ${g} ${b})`;
+      }
+
+      function srgbToOklch(hex) {
+        const h = hex.replace("#", "");
+        const n = parseInt(h, 16);
+        let r = ((n >> 16) & 255) / 255;
+        let g = ((n >> 8) & 255) / 255;
+        let b = (n & 255) / 255;
+
+        const linearize = (v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);
+        r = linearize(r);
+        g = linearize(g);
+        b = linearize(b);
+
+        const l = 0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b;
+        const m = 0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b;
+        const s = 0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b;
+
+        const l_ = Math.cbrt(l);
+        const m_ = Math.cbrt(m);
+        const s_ = Math.cbrt(s);
+
+        const L = 0.2104542553 * l_ + 0.793617785 * m_ - 0.0040720468 * s_;
+        const a = 1.9779984951 * l_ - 2.428592205 * m_ + 0.4505937099 * s_;
+        const bb = 0.0259040371 * l_ + 0.7827717662 * m_ - 0.808675766 * s_;
+
+        const C = Math.sqrt(a * a + bb * bb);
+        const H = (Math.atan2(bb, a) * 180) / Math.PI;
+        const hue = (H + 360) % 360;
+        return `oklch(${(L * 100).toFixed(2)}% ${C.toFixed(4)} ${hue.toFixed(2)})`;
+      }
+
+      function makeSwatch([name, token, usage]) {
+        const hex = getComputedStyle(root).getPropertyValue(token).trim();
+        const rgb = toRgb(hex);
+        const oklch = srgbToOklch(hex);
+        const wrap = document.createElement("article");
+        wrap.className = "swatch";
+        wrap.innerHTML = `
+          <div class="chip" style="background:${hex};"></div>
+          <div class="swatch-content">
+            <strong>${name}</strong>
+            <p>${usage}</p>
+            <p><code>${token}</code></p>
+            <p>HEX: <code>${hex}</code></p>
+            <p>RGB: <code>${rgb}</code></p>
+            <p>OKLCH: <code>${oklch}</code></p>
+            <div class="controls">
+              <button class="copy-btn" data-copy="${hex}">Copy HEX</button>
+              <button class="copy-btn" data-copy="${rgb}">Copy RGB</button>
+              <button class="copy-btn" data-copy="${oklch}">Copy OKLCH</button>
+            </div>
+          </div>
+        `;
+        return wrap;
+      }
+
+      function render() {
+        for (const [key, rows] of Object.entries(palette)) {
+          const el = document.getElementById(`${key}-grid`);
+          el.innerHTML = "";
+          rows.forEach((row) => el.appendChild(makeSwatch(row)));
+        }
+      }
+
+      themeSelect.addEventListener("change", (e) => {
+        root.dataset.theme = e.target.value;
+        render();
+      });
+
+      accentSelect.addEventListener("change", (e) => {
+        root.dataset.accent = e.target.value;
+        render();
+      });
+
+      document.addEventListener("click", async (event) => {
+        const btn = event.target.closest(".copy-btn");
+        if (!btn) return;
+        const value = btn.dataset.copy;
+        await navigator.clipboard.writeText(value);
+        const old = btn.textContent;
+        btn.textContent = "Copied";
+        setTimeout(() => (btn.textContent = old), 800);
+      });
+
+      render();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "spectrum",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test heading-utils.test.mjs",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^9.25.1"
+  }
+}

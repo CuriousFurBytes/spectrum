@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spectrum Theme System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="theme.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container toolbar">
+        <strong data-split-heading="Spectrum Design System">Spectrum Design System</strong>
+        <div class="controls">
+          <label>
+            Theme
+            <select id="theme-mode">
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+            </select>
+          </label>
+          <label>
+            Accent
+            <select id="theme-accent">
+              <option value="purple">Purple</option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="orange">Orange</option>
+              <option value="teal">Teal</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1 data-split-heading="Vibrant Adaptive Color Language">Vibrant Adaptive Color Language</h1>
+        <p>
+          Spectrum is a high-energy design palette inspired by Dracula and Monokai Pro: deep cosmic neutrals,
+          expressive accents, and semantic status colors tuned for readability across interfaces, docs, and IDEs.
+        </p>
+      </section>
+
+      <section>
+        <h2 data-split-heading="Base Foundation Colors">Base Foundation Colors</h2>
+        <p>These are the structural tokens. Light and dark themes use identical hex values in opposition, preserving brand identity and contrast.</p>
+        <div class="grid">
+          <article class="color-card" data-color data-hex="#120C24" data-rgb="rgb(18 12 36)" data-oklch="oklch(0.20 0.05 293)">
+            <div class="swatch" style="background:#120C24"></div>
+            <div class="card-body"><strong>Background / Text Opposite</strong><span class="tag">--neutral-000</span><p>Dark cosmic anchor for dark mode background and light mode text.</p><div class="button-row"><button class="btn" data-copy="hex">Copy HEX</button><button class="btn" data-copy="rgb">Copy RGB</button><button class="btn" data-copy="oklch">Copy OKLCH</button></div></div>
+          </article>
+          <article class="color-card" data-color data-hex="#1E1536" data-rgb="rgb(30 21 54)" data-oklch="oklch(0.25 0.05 293)">
+            <div class="swatch" style="background:#1E1536"></div>
+            <div class="card-body"><strong>Surface 2</strong><span class="tag">--neutral-100</span><p>Primary container background for cards and code panes in dark mode.</p><div class="button-row"><button class="btn" data-copy="hex">Copy HEX</button><button class="btn" data-copy="rgb">Copy RGB</button><button class="btn" data-copy="oklch">Copy OKLCH</button></div></div>
+          </article>
+          <article class="color-card" data-color data-hex="#2C1D4D" data-rgb="rgb(44 29 77)" data-oklch="oklch(0.31 0.07 294)">
+            <div class="swatch" style="background:#2C1D4D"></div>
+            <div class="card-body"><strong>Surface 3</strong><span class="tag">--neutral-200</span><p>Elevated layer and separators where more depth is required.</p><div class="button-row"><button class="btn" data-copy="hex">Copy HEX</button><button class="btn" data-copy="rgb">Copy RGB</button><button class="btn" data-copy="oklch">Copy OKLCH</button></div></div>
+          </article>
+          <article class="color-card" data-color data-hex="#F5F2FF" data-rgb="rgb(245 242 255)" data-oklch="oklch(0.97 0.01 285)">
+            <div class="swatch" style="background:#F5F2FF"></div>
+            <div class="card-body"><strong>Text / Background Opposite</strong><span class="tag">--neutral-900</span><p>Bright readable text in dark mode and clean page background in light mode.</p><div class="button-row"><button class="btn" data-copy="hex">Copy HEX</button><button class="btn" data-copy="rgb">Copy RGB</button><button class="btn" data-copy="oklch">Copy OKLCH</button></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 data-split-heading="Accent Families and Variants">Accent Families and Variants</h2>
+        <p>Each accent includes one primary value with three darker and three lighter variants for borders, states, and gradients.</p>
+        <div class="grid">
+          <article class="color-card"><div class="swatch" style="background:linear-gradient(90deg,#2E1F63,#6750BD,#7F77DD,#B2ABFF)"></div><div class="card-body"><strong>Purple Core Accent</strong><p>Default energy tone; ideal for CTAs, links, selected tabs, and syntax highlights.</p></div></article>
+          <article class="color-card"><div class="swatch" style="background:linear-gradient(90deg,#5F1020,#BA2644,#E04363,#FFACBE)"></div><div class="card-body"><strong>Red Accent</strong><p>Use for intense focus states or campaign branding, not semantic error messaging.</p></div></article>
+          <article class="color-card"><div class="swatch" style="background:linear-gradient(90deg,#0B2B6E,#1C63D6,#2F82FF,#A9CBFF)"></div><div class="card-body"><strong>Blue Accent</strong><p>Calm technical emphasis for information highlights, docs links, and shell prompts.</p></div></article>
+          <article class="color-card"><div class="swatch" style="background:linear-gradient(90deg,#6B2509,#BD481D,#D85A30,#FFAE90)"></div><div class="card-body"><strong>Orange Accent</strong><p>Warm urgency without crossing into warning semantics; great for badges and counters.</p></div></article>
+          <article class="color-card"><div class="swatch" style="background:linear-gradient(90deg,#0F4C3A,#18896A,#1D9E75,#6DE7BC)"></div><div class="card-body"><strong>Teal Accent</strong><p>Balanced innovation tone for success-adjacent interactions and feature spotlights.</p></div></article>
+        </div>
+      </section>
+
+      <section>
+        <h2 data-split-heading="Standard Semantic Colors">Standard Semantic Colors</h2>
+        <p>Semantic colors are intentionally distinct from accent families to avoid ambiguity in alerts and system feedback.</p>
+        <div class="grid">
+          <article class="color-card"><div class="swatch" style="background:linear-gradient(90deg,#5F101F,#8D1D2F,#D83A52,#FF5F79)"></div><div class="card-body"><strong>Error</strong><p>Use for destructive outcomes, failed validation, and fatal status messages.</p></div></article>
+          <article class="color-card"><div class="swatch" style="background:linear-gradient(90deg,#614400,#8C6100,#C48700,#FFB400)"></div><div class="card-body"><strong>Warning</strong><p>Use for recoverable issues, degraded service, or requires-attention notices.</p></div></article>
+          <article class="color-card"><div class="swatch" style="background:linear-gradient(90deg,#0F4B1D,#1D6A2E,#2F9444,#41C85D)"></div><div class="card-body"><strong>Success</strong><p>Use for completed actions, healthy status, and positive notifications.</p></div></article>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <h2 data-split-heading="Practical Interface Showcase">Practical Interface Showcase</h2>
+        <div class="cards">
+          <article class="sample-card">
+            <h3 data-split-heading="Primary Call To Action">Primary Call To Action</h3>
+            <p>Gradient buttons should pull from accent darker/lighter pair for depth.</p>
+            <button class="cta">Deploy Theme</button>
+          </article>
+          <article class="sample-card">
+            <h3 data-split-heading="Editor Theme Usage">Editor Theme Usage</h3>
+            <p>Map strings to orange variants, keywords to accent-primary, and comments to neutral-300.</p>
+            <p><span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">P</span></p>
+          </article>
+          <article class="sample-card usage">
+            <h3 data-split-heading="Web App Guidance">Web App Guidance</h3>
+            <ul>
+              <li>Body text: <code>var(--color-text)</code></li>
+              <li>Containers: <code>var(--color-surface)</code></li>
+              <li>Links/active: <code>var(--accent-primary)</code></li>
+            </ul>
+            <a class="link" href="#">Read token docs</a>
+          </article>
+        </div>
+      </section>
+      <p class="footer-note">Spectrum keeps a single chromatic language across light/dark by inverting role assignment—not by muting colors.</p>
+    </main>
+  </body>
+</html>

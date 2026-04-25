@@ -1,0 +1,227 @@
+@font-face {
+  font-family: 'Monaspace Argon';
+  src: url('https://raw.githubusercontent.com/githubnext/monaspace/main/fonts/webfonts/MonaspaceArgonVarVF%5Bwght%2Cwdth%2Cslnt%5D.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  --radius-sm: 0.5rem;
+  --radius-md: 0.9rem;
+  --radius-lg: 1.25rem;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+
+  --neutral-000: #120c24;
+  --neutral-100: #1e1536;
+  --neutral-200: #2c1d4d;
+  --neutral-300: #4a3a76;
+  --neutral-700: #c9b9ff;
+  --neutral-800: #e8e2ff;
+  --neutral-900: #f5f2ff;
+
+  --purple-100: #2e1f63;
+  --purple-200: #4b3798;
+  --purple-300: #6750bd;
+  --purple-400: #7f77dd;
+  --purple-500: #9a92f2;
+  --purple-600: #b2abff;
+  --purple-700: #cac5ff;
+
+  --blue-100: #0b2b6e;
+  --blue-200: #1246a8;
+  --blue-300: #1c63d6;
+  --blue-400: #2f82ff;
+  --blue-500: #5e9cff;
+  --blue-600: #84b4ff;
+  --blue-700: #a9cbff;
+
+  --red-100: #5f1020;
+  --red-200: #8f1731;
+  --red-300: #ba2644;
+  --red-400: #e04363;
+  --red-500: #f0657f;
+  --red-600: #ff88a0;
+  --red-700: #ffacbe;
+
+  --orange-100: #6b2509;
+  --orange-200: #973713;
+  --orange-300: #bd481d;
+  --orange-400: #d85a30;
+  --orange-500: #ef754c;
+  --orange-600: #ff926d;
+  --orange-700: #ffae90;
+
+  --teal-100: #0f4c3a;
+  --teal-200: #146b52;
+  --teal-300: #18896a;
+  --teal-400: #1d9e75;
+  --teal-500: #2ab88b;
+  --teal-600: #45d3a3;
+  --teal-700: #6de7bc;
+
+  --status-error-100: #5f101f;
+  --status-error-200: #8d1d2f;
+  --status-error-300: #d83a52;
+  --status-error-400: #ff5f79;
+
+  --status-warn-100: #614400;
+  --status-warn-200: #8c6100;
+  --status-warn-300: #c48700;
+  --status-warn-400: #ffb400;
+
+  --status-success-100: #0f4b1d;
+  --status-success-200: #1d6a2e;
+  --status-success-300: #2f9444;
+  --status-success-400: #41c85d;
+
+  --accent-primary: var(--purple-400);
+  --accent-darker-1: var(--purple-300);
+  --accent-darker-2: var(--purple-200);
+  --accent-darker-3: var(--purple-100);
+  --accent-lighter-1: var(--purple-500);
+  --accent-lighter-2: var(--purple-600);
+  --accent-lighter-3: var(--purple-700);
+}
+
+:root[data-theme='dark'] {
+  --color-bg: var(--neutral-000);
+  --color-surface: var(--neutral-100);
+  --color-surface-3: var(--neutral-200);
+  --color-border: color-mix(in oklab, var(--neutral-700) 35%, transparent);
+  --color-text: var(--neutral-900);
+  --color-text-muted: var(--neutral-800);
+}
+
+:root[data-theme='light'] {
+  --color-bg: var(--neutral-900);
+  --color-surface: var(--neutral-800);
+  --color-surface-3: var(--neutral-700);
+  --color-border: color-mix(in oklab, var(--neutral-100) 20%, transparent);
+  --color-text: var(--neutral-000);
+  --color-text-muted: var(--neutral-100);
+}
+
+:root[data-accent='purple'] {
+  --accent-primary: var(--purple-400);
+  --accent-darker-1: var(--purple-300);
+  --accent-darker-2: var(--purple-200);
+  --accent-darker-3: var(--purple-100);
+  --accent-lighter-1: var(--purple-500);
+  --accent-lighter-2: var(--purple-600);
+  --accent-lighter-3: var(--purple-700);
+}
+:root[data-accent='blue'] {
+  --accent-primary: var(--blue-400);
+  --accent-darker-1: var(--blue-300);
+  --accent-darker-2: var(--blue-200);
+  --accent-darker-3: var(--blue-100);
+  --accent-lighter-1: var(--blue-500);
+  --accent-lighter-2: var(--blue-600);
+  --accent-lighter-3: var(--blue-700);
+}
+:root[data-accent='red'] {
+  --accent-primary: var(--red-400);
+  --accent-darker-1: var(--red-300);
+  --accent-darker-2: var(--red-200);
+  --accent-darker-3: var(--red-100);
+  --accent-lighter-1: var(--red-500);
+  --accent-lighter-2: var(--red-600);
+  --accent-lighter-3: var(--red-700);
+}
+:root[data-accent='orange'] {
+  --accent-primary: var(--orange-400);
+  --accent-darker-1: var(--orange-300);
+  --accent-darker-2: var(--orange-200);
+  --accent-darker-3: var(--orange-100);
+  --accent-lighter-1: var(--orange-500);
+  --accent-lighter-2: var(--orange-600);
+  --accent-lighter-3: var(--orange-700);
+}
+:root[data-accent='teal'] {
+  --accent-primary: var(--teal-400);
+  --accent-darker-1: var(--teal-300);
+  --accent-darker-2: var(--teal-200);
+  --accent-darker-3: var(--teal-100);
+  --accent-lighter-1: var(--teal-500);
+  --accent-lighter-2: var(--teal-600);
+  --accent-lighter-3: var(--teal-700);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Monaspace Argon', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: radial-gradient(circle at top right, color-mix(in oklab, var(--accent-primary) 25%, var(--color-bg)), var(--color-bg));
+  color: var(--color-text);
+  line-height: 1.55;
+}
+
+.container { width: min(1100px, 92vw); margin: 0 auto; }
+header { position: sticky; top: 0; z-index: 10; background: color-mix(in oklab, var(--color-bg) 85%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border); }
+.toolbar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-3) 0; }
+.controls { display: flex; gap: var(--space-2); }
+select {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+}
+
+main { padding: var(--space-5) 0 4rem; display: grid; gap: var(--space-5); }
+.hero { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5rem; }
+.heading-lead { color: var(--color-text); }
+.heading-accent { color: var(--accent-primary); }
+
+p { margin-top: 0; color: var(--color-text-muted); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-3); }
+
+.color-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: grid;
+}
+.swatch { min-height: 90px; }
+.card-body { padding: var(--space-3); display: grid; gap: var(--space-1); }
+.tag { display: inline-flex; width: fit-content; padding: 0.2rem 0.55rem; background: var(--color-surface-3); border-radius: 999px; color: var(--color-text); font-size: 0.78rem; }
+.button-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.35rem; }
+.btn {
+  background: color-mix(in oklab, var(--color-surface-3) 70%, var(--color-bg));
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 0.45rem;
+  padding: 0.3rem 0.6rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.showcase {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: var(--space-3); }
+.sample-card {
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+}
+.kbd { padding: 0.2rem 0.4rem; border-radius: 0.35rem; background: var(--color-bg); border: 1px solid var(--color-border); }
+
+.link { color: var(--accent-primary); text-underline-offset: 0.22rem; }
+.cta {
+  border: none; border-radius: var(--radius-sm); font: inherit; padding: 0.65rem 1rem;
+  background: linear-gradient(90deg, var(--accent-darker-1), var(--accent-lighter-1)); color: white; font-weight: 650;
+}
+
+.usage ul { margin: 0; padding-left: 1.2rem; color: var(--color-text-muted); }
+.footer-note { font-size: 0.9rem; color: var(--color-text-muted); }

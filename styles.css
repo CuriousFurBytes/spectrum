@@ -1,0 +1,424 @@
+@font-face {
+  font-family: "Monaspace Argon";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/githubnext/monaspace@main/fonts/webfonts/MonaspaceArgonVarVF%5Bwght%2Cwdth%2Cslnt%5D.woff2")
+    format("woff2");
+}
+
+:root {
+  color-scheme: light;
+
+  /* Core neutral palette (shared between light and dark themes) */
+  --n-950: #100a1e;
+  --n-900: #1e1536;
+  --n-850: #2a1d47;
+  --n-800: #332356;
+  --n-700: #4a3672;
+  --n-500: #7f77dd;
+  --n-300: #c0bcff;
+  --n-150: #dedcff;
+  --n-100: #eae8ff;
+  --n-50: #f5f4ff;
+
+  /* Accent palettes: base + 3 lighter + 3 darker */
+  --accent-purple-dark-3: #2a1a5c;
+  --accent-purple-dark-2: #402b86;
+  --accent-purple-dark-1: #5d45b3;
+  --accent-purple-base: #7f77dd;
+  --accent-purple-light-1: #9992e8;
+  --accent-purple-light-2: #b7b1f1;
+  --accent-purple-light-3: #d2cef8;
+
+  --accent-red-dark-3: #621424;
+  --accent-red-dark-2: #8a1f33;
+  --accent-red-dark-1: #b22d45;
+  --accent-red-base: #de4667;
+  --accent-red-light-1: #e96a85;
+  --accent-red-light-2: #f291a5;
+  --accent-red-light-3: #f8bcc8;
+
+  --accent-blue-dark-3: #0d335e;
+  --accent-blue-dark-2: #154c8a;
+  --accent-blue-dark-1: #1d68b8;
+  --accent-blue-base: #2d89ea;
+  --accent-blue-light-1: #56a1f0;
+  --accent-blue-light-2: #84bcf6;
+  --accent-blue-light-3: #b6d8fb;
+
+  --accent-orange-dark-3: #6d2b10;
+  --accent-orange-dark-2: #923b17;
+  --accent-orange-dark-1: #b94b1f;
+  --accent-orange-base: #d85a30;
+  --accent-orange-light-1: #e57b57;
+  --accent-orange-light-2: #eea183;
+  --accent-orange-light-3: #f7c7b2;
+
+  --accent-teal-dark-3: #0f5e45;
+  --accent-teal-dark-2: #16785a;
+  --accent-teal-dark-1: #1a8d68;
+  --accent-teal-base: #1d9e75;
+  --accent-teal-light-1: #35b389;
+  --accent-teal-light-2: #62c8a7;
+  --accent-teal-light-3: #9adfc7;
+
+  /* Standard semantic colors (separate from accent colors) */
+  --status-danger-strong: #bd1238;
+  --status-danger-base: #d91a47;
+  --status-danger-soft: #f76a8a;
+  --status-danger-mute: #ffd1db;
+
+  --status-warning-strong: #a55b00;
+  --status-warning-base: #ca7600;
+  --status-warning-soft: #f4a931;
+  --status-warning-mute: #ffe0ad;
+
+  --status-success-strong: #0f6f32;
+  --status-success-base: #188d41;
+  --status-success-soft: #34b365;
+  --status-success-mute: #c6f1d5;
+
+  /* Theme-role mapping defaults (dark) */
+  --bg-base: var(--n-900);
+  --bg-elevated: var(--n-850);
+  --surface-2: var(--n-800);
+  --surface-3: var(--n-700);
+  --text-base: var(--n-50);
+  --text-muted: var(--n-150);
+  --text-subtle: var(--n-300);
+  --border-strong: color-mix(in oklab, var(--text-base) 30%, transparent);
+  --border-soft: color-mix(in oklab, var(--text-base) 16%, transparent);
+
+  /* Active accent mapping */
+  --accent-primary: var(--accent-purple-base);
+  --accent-strong: var(--accent-purple-dark-1);
+  --accent-soft: var(--accent-purple-light-2);
+  --accent-ghost: color-mix(in oklab, var(--accent-primary) 18%, transparent);
+
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-elev: 0 14px 40px color-mix(in oklab, var(--bg-base) 60%, #000 40%);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg-base: var(--n-50);
+  --bg-elevated: var(--n-100);
+  --surface-2: var(--n-150);
+  --surface-3: var(--n-300);
+  --text-base: var(--n-900);
+  --text-muted: var(--n-800);
+  --text-subtle: var(--n-700);
+  --border-strong: color-mix(in oklab, var(--text-base) 28%, transparent);
+  --border-soft: color-mix(in oklab, var(--text-base) 14%, transparent);
+  --shadow-elev: 0 14px 40px color-mix(in oklab, var(--n-900) 18%, transparent);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+:root[data-accent="purple"] {
+  --accent-primary: var(--accent-purple-base);
+  --accent-strong: var(--accent-purple-dark-1);
+  --accent-soft: var(--accent-purple-light-2);
+}
+
+:root[data-accent="red"] {
+  --accent-primary: var(--accent-red-base);
+  --accent-strong: var(--accent-red-dark-1);
+  --accent-soft: var(--accent-red-light-2);
+}
+
+:root[data-accent="blue"] {
+  --accent-primary: var(--accent-blue-base);
+  --accent-strong: var(--accent-blue-dark-1);
+  --accent-soft: var(--accent-blue-light-2);
+}
+
+:root[data-accent="orange"] {
+  --accent-primary: var(--accent-orange-base);
+  --accent-strong: var(--accent-orange-dark-1);
+  --accent-soft: var(--accent-orange-light-2);
+}
+
+:root[data-accent="teal"] {
+  --accent-primary: var(--accent-teal-base);
+  --accent-strong: var(--accent-teal-dark-1);
+  --accent-soft: var(--accent-teal-light-2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 8%, var(--accent-ghost), transparent 34%),
+    var(--bg-base);
+  color: var(--text-base);
+  font-family:
+    "Monaspace Argon", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas,
+    monospace;
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  background: color-mix(in oklab, var(--bg-base) 84%, transparent);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.toolbar {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+select,
+button,
+input {
+  font: inherit;
+}
+
+select,
+.copy-btn,
+.demo-btn {
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  background: var(--bg-elevated);
+  color: var(--text-base);
+  padding: 0.52rem 0.75rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  margin: 0;
+}
+
+.split-title {
+  display: inline-flex;
+  gap: 0.3ch;
+  align-items: baseline;
+}
+
+.title-base {
+  color: var(--text-base);
+}
+
+.title-accent {
+  color: var(--accent-primary);
+}
+
+.hero {
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  background:
+    linear-gradient(
+      120deg,
+      color-mix(in oklab, var(--accent-primary) 24%, transparent),
+      transparent 45%
+    ),
+    var(--bg-elevated);
+  box-shadow: var(--shadow-elev);
+}
+
+.hero p {
+  max-width: 70ch;
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.section {
+  margin-top: 1.5rem;
+}
+
+.swatch {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.swatch-color {
+  min-height: 92px;
+  padding: 0.8rem;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid
+    color-mix(in oklab, var(--text-base) 20%, transparent);
+}
+
+.swatch-content {
+  padding: 0.8rem;
+  display: grid;
+  gap: 0.52rem;
+}
+
+.swatch-content p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.color-values {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.value-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.value-row code {
+  overflow-wrap: anywhere;
+  font-size: 0.82rem;
+}
+
+.copy-btn {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.copy-btn:hover,
+.demo-btn:hover,
+select:hover {
+  border-color: var(--border-strong);
+}
+
+.copy-btn[data-copied="true"] {
+  border-color: color-mix(
+    in oklab,
+    var(--status-success-base) 70%,
+    var(--border-strong)
+  );
+  color: var(--status-success-base);
+}
+
+.demo-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.card p {
+  color: var(--text-muted);
+}
+
+.demo-btn {
+  margin-right: 0.55rem;
+  cursor: pointer;
+}
+
+.demo-btn.accent {
+  background: var(--accent-primary);
+  border-color: color-mix(in oklab, var(--accent-primary) 70%, #000 30%);
+  color: #fff;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.25rem 0.68rem;
+  border: 1px solid;
+  font-size: 0.82rem;
+}
+
+.badge.error {
+  color: var(--status-danger-base);
+  border-color: color-mix(in oklab, var(--status-danger-base) 44%, transparent);
+  background: color-mix(in oklab, var(--status-danger-base) 16%, transparent);
+}
+
+.badge.warning {
+  color: var(--status-warning-base);
+  border-color: color-mix(
+    in oklab,
+    var(--status-warning-base) 44%,
+    transparent
+  );
+  background: color-mix(in oklab, var(--status-warning-base) 16%, transparent);
+}
+
+.badge.success {
+  color: var(--status-success-base);
+  border-color: color-mix(
+    in oklab,
+    var(--status-success-base) 44%,
+    transparent
+  );
+  background: color-mix(in oklab, var(--status-success-base) 16%, transparent);
+}
+
+.usage-list {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--text-muted);
+}
+
+.usage-list li + li {
+  margin-top: 0.48rem;
+}
+
+.footer-note {
+  margin-top: 1.2rem;
+  color: var(--text-subtle);
+  font-size: 0.9rem;
+}

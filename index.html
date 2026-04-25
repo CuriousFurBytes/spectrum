@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-accent="purple">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spectrum Theme System</title>
+    <meta
+      name="description"
+      content="Spectrum is a vibrant dual-mode design system with energetic accents and semantic color standards."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="toolbar">
+        <strong class="split-title">
+          <span class="title-base">Spec</span
+          ><span class="title-accent">trum</span>
+        </strong>
+        <div class="controls">
+          <label for="theme-mode"
+            >Theme Mode
+            <select
+              id="theme-mode"
+              aria-label="Choose light or dark theme mode"
+            >
+              <option value="dark" selected>Dark</option>
+              <option value="light">Light</option>
+            </select>
+          </label>
+          <label for="accent-choice"
+            >Accent Family
+            <select id="accent-choice" aria-label="Choose accent color family">
+              <option value="purple" selected>Purple</option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="orange">Orange</option>
+              <option value="teal">Teal</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1 class="split-title" aria-label="Spectrum Design System">
+          <span class="title-base">Spectrum Design</span
+          ><span class="title-accent">System</span>
+        </h1>
+        <p>
+          Built for intense contrast, rich visual energy, and practical
+          implementation. Spectrum keeps a shared hex palette across light and
+          dark mode by inverting role assignments, so your brand color DNA stays
+          stable while UI mood adapts.
+        </p>
+        <p>
+          Typeface: <strong>Monaspace Argon</strong> with monospaced fallbacks
+          for consistent dev-tool and interface aesthetics.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="split-title" aria-label="Base Colors">
+          <span class="title-base">Base</span
+          ><span class="title-accent">Colors</span>
+        </h2>
+        <p class="footer-note">
+          Base roles are intentionally remapped between dark and light mode
+          while keeping exact hex values.
+        </p>
+        <div class="grid">
+          <article class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #1e1536; color: #f5f4ff"
+            >
+              --bg-base / #1E1536
+            </div>
+            <div class="swatch-content">
+              <p>
+                Primary application canvas for immersive or code-first screens.
+              </p>
+              <div class="color-values">
+                <div class="value-row">
+                  <code>#1E1536</code
+                  ><button class="copy-btn" data-copy="#1E1536">Copy</button>
+                </div>
+                <div class="value-row">
+                  <code>rgb(30, 21, 54)</code
+                  ><button class="copy-btn" data-copy="rgb(30, 21, 54)">
+                    Copy
+                  </button>
+                </div>
+                <div class="value-row">
+                  <code>oklch(0.257 0.064 295)</code
+                  ><button class="copy-btn" data-copy="oklch(0.257 0.064 295)">
+                    Copy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #f5f4ff; color: #1e1536"
+            >
+              --text-base / #F5F4FF
+            </div>
+            <div class="swatch-content">
+              <p>
+                Primary readable ink. Swap this to background in light mode.
+              </p>
+              <div class="color-values">
+                <div class="value-row">
+                  <code>#F5F4FF</code
+                  ><button class="copy-btn" data-copy="#F5F4FF">Copy</button>
+                </div>
+                <div class="value-row">
+                  <code>rgb(245, 244, 255)</code
+                  ><button class="copy-btn" data-copy="rgb(245, 244, 255)">
+                    Copy
+                  </button>
+                </div>
+                <div class="value-row">
+                  <code>oklch(0.975 0.011 293)</code
+                  ><button class="copy-btn" data-copy="oklch(0.975 0.011 293)">
+                    Copy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #332356; color: #f5f4ff"
+            >
+              --surface-2 / #332356
+            </div>
+            <div class="swatch-content">
+              <p>
+                Default cards, sidebars, and command groups that need separation
+                from base.
+              </p>
+              <div class="color-values">
+                <div class="value-row">
+                  <code>#332356</code
+                  ><button class="copy-btn" data-copy="#332356">Copy</button>
+                </div>
+                <div class="value-row">
+                  <code>rgb(51, 35, 86)</code
+                  ><button class="copy-btn" data-copy="rgb(51, 35, 86)">
+                    Copy
+                  </button>
+                </div>
+                <div class="value-row">
+                  <code>oklch(0.327 0.088 294)</code
+                  ><button class="copy-btn" data-copy="oklch(0.327 0.088 294)">
+                    Copy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #4a3672; color: #f5f4ff"
+            >
+              --surface-3 / #4A3672
+            </div>
+            <div class="swatch-content">
+              <p>
+                Higher-elevation zones: selected cards, floating panels,
+                highlighted modules.
+              </p>
+              <div class="color-values">
+                <div class="value-row">
+                  <code>#4A3672</code
+                  ><button class="copy-btn" data-copy="#4A3672">Copy</button>
+                </div>
+                <div class="value-row">
+                  <code>rgb(74, 54, 114)</code
+                  ><button class="copy-btn" data-copy="rgb(74, 54, 114)">
+                    Copy
+                  </button>
+                </div>
+                <div class="value-row">
+                  <code>oklch(0.423 0.095 295)</code
+                  ><button class="copy-btn" data-copy="oklch(0.423 0.095 295)">
+                    Copy
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="split-title" aria-label="Accent Families">
+          <span class="title-base">Accent</span
+          ><span class="title-accent">Families</span>
+        </h2>
+        <p class="footer-note">
+          Each family includes one base accent, 3 darker variants, and 3 lighter
+          variants.
+        </p>
+        <div class="grid">
+          <article class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #7f77dd; color: #ffffff"
+            >
+              Purple · #7F77DD
+            </div>
+            <div class="swatch-content">
+              <p>
+                Original accent for navigation, links, active state highlights,
+                and syntax punctuation in IDE themes.
+              </p>
+            </div>
+          </article>
+          <article class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #de4667; color: #ffffff"
+            >
+              Red · #DE4667
+            </div>
+            <div class="swatch-content">
+              <p>
+                Energetic action accent for urgency, launch indicators, and
+                attention-priority badges.
+              </p>
+            </div>
+          </article>
+          <article class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #2d89ea; color: #ffffff"
+            >
+              Blue · #2D89EA
+            </div>
+            <div class="swatch-content">
+              <p>
+                Technical accent for informational emphasis, links, and
+                data-focused components.
+              </p>
+            </div>
+          </article>
+          <article class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #d85a30; color: #ffffff"
+            >
+              Orange · #D85A30
+            </div>
+            <div class="swatch-content">
+              <p>
+                High-energy accent for call-to-action clusters and spotlight
+                modules.
+              </p>
+            </div>
+          </article>
+          <article class="swatch">
+            <div
+              class="swatch-color"
+              style="background: #1d9e75; color: #ffffff"
+            >
+              Teal · #1D9E75
+            </div>
+            <div class="swatch-content">
+              <p>
+                Balanced accent for confirmation-like emphasis without using
+                semantic success green.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="split-title" aria-label="Standard Semantics">
+          <span class="title-base">Standard</span
+          ><span class="title-accent">Semantics</span>
+        </h2>
+        <div class="demo-cards">
+          <article class="card">
+            <h3 class="split-title">
+              <span class="title-base">Warning</span
+              ><span class="title-accent">Channels</span>
+            </h3>
+            <p>
+              Semantic tones are intentionally separate from accent families to
+              avoid message ambiguity.
+            </p>
+            <div class="badges">
+              <span class="badge error">Error · #D91A47</span>
+              <span class="badge warning">Warning · #CA7600</span>
+              <span class="badge success">Success · #188D41</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3 class="split-title">
+              <span class="title-base">Usage</span
+              ><span class="title-accent">Guidance</span>
+            </h3>
+            <ul class="usage-list">
+              <li>
+                <strong>Web apps:</strong> use accent-primary for interaction
+                cues and links.
+              </li>
+              <li>
+                <strong>VS Code/IDE:</strong> map accent-primary to keywords;
+                use accent-soft for line highlights.
+              </li>
+              <li>
+                <strong>Dashboards:</strong> reserve semantic colors for state
+                and alerts only.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="split-title" aria-label="Interface Demo">
+          <span class="title-base">Interface</span
+          ><span class="title-accent">Demo</span>
+        </h2>
+        <div class="demo-cards">
+          <article class="card">
+            <h3 class="split-title">
+              <span class="title-base">Card</span
+              ><span class="title-accent">System</span>
+            </h3>
+            <p>
+              Components are intentionally built from variables only. This
+              enables rapid adaptation across products while preserving visual
+              identity.
+            </p>
+            <button class="demo-btn accent">Primary action</button>
+            <button class="demo-btn">Secondary action</button>
+          </article>
+          <article class="card">
+            <h3 class="split-title">
+              <span class="title-base">Type</span
+              ><span class="title-accent">Scale</span>
+            </h3>
+            <p><strong>Display:</strong> Hero and section anchors.</p>
+            <p>
+              <span style="color: var(--text-subtle)">Muted:</span> Explanatory
+              content and metadata.
+            </p>
+            <p>
+              <a href="#" style="color: var(--accent-primary)">Accent links</a>
+              stay vivid in both modes.
+            </p>
+          </article>
+        </div>
+        <p class="footer-note">
+          Spectrum ships as portable CSS variables suitable for websites, docs
+          portals, design tools, and editor themes.
+        </p>
+      </section>
+    </main>
+
+    <script src="./theme.js"></script>
+  </body>
+</html>

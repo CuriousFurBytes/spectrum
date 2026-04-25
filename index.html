@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-accent="purple">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spectrum Theme System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Monaspace+Argon:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <p><strong>Spectrum</strong> vibrant design tokens</p>
+        <div class="controls">
+          <label>Theme
+            <select id="theme-select">
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+            </select>
+          </label>
+          <label>Accent
+            <select id="accent-select">
+              <option value="purple">Purple</option>
+              <option value="blue">Blue</option>
+              <option value="red">Red</option>
+              <option value="orange">Orange</option>
+              <option value="teal">Teal</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main class="container grid" style="gap: 1.5rem">
+      <section class="hero panel">
+        <h1><span class="split-base">Spectrum</span> <span class="split-accent">System</span></h1>
+        <p>
+          A high-energy theme for products, docs, and IDEs inspired by Dracula and Monokai Pro. Dark and light modes
+          reuse the same hex palette in opposition, while accent families provide expressive variants for UI emphasis.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2><span class="split-base">Base</span> <span class="split-accent">Colors</span></h2>
+        <p class="small-note">Use base layers for app chrome, editor backgrounds, sidebars, cards, and text hierarchy.</p>
+        <div class="grid grid-2">
+          <article class="preview-card">
+            <div class="swatch" style="background: var(--bg-color)"></div>
+            <h3>Background</h3>
+            <p>Main canvas for pages and editor workspaces.</p>
+          </article>
+          <article class="preview-card">
+            <div class="swatch" style="background: var(--text-color)"></div>
+            <h3>Text</h3>
+            <p>Primary reading color for body copy and code text.</p>
+          </article>
+          <article class="preview-card">
+            <div class="swatch" style="background: var(--surface-1)"></div>
+            <h3>Surface One</h3>
+            <p>Default card and modal containers.</p>
+          </article>
+          <article class="preview-card">
+            <div class="swatch" style="background: var(--surface-2)"></div>
+            <h3>Surface Two</h3>
+            <p>Elevated blocks and inline snippets.</p>
+          </article>
+          <article class="preview-card">
+            <div class="swatch" style="background: var(--surface-3)"></div>
+            <h3>Surface Three</h3>
+            <p>Hover states, selected rows, and active nav items.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2><span class="split-base">Accent</span> <span class="split-accent">Families</span></h2>
+        <p class="small-note">Each accent includes one base + 3 lighter + 3 darker options for scale and emphasis.</p>
+        <div class="grid grid-3">
+          <article class="preview-card swatch-row" data-color-name="Primary Accent" data-hex="#7F77DD" data-oklch="oklch(62% 0.14 300)" data-rgb="rgb(127 119 221)">
+            <div class="swatch" style="background:#7F77DD"></div>
+            <strong>Purple 500</strong>
+            <div class="copy-group">
+              <button class="copy-value" data-copy="hex">Copy HEX</button>
+              <button class="copy-value" data-copy="oklch">Copy OKLCH</button>
+              <button class="copy-value" data-copy="rgb">Copy RGB</button>
+            </div>
+          </article>
+          <article class="preview-card swatch-row" data-color-name="Teal Accent" data-hex="#1D9E75" data-oklch="oklch(61% 0.12 167)" data-rgb="rgb(29 158 117)">
+            <div class="swatch" style="background:#1D9E75"></div>
+            <strong>Teal 500</strong>
+            <div class="copy-group">
+              <button class="copy-value" data-copy="hex">Copy HEX</button>
+              <button class="copy-value" data-copy="oklch">Copy OKLCH</button>
+              <button class="copy-value" data-copy="rgb">Copy RGB</button>
+            </div>
+          </article>
+          <article class="preview-card swatch-row" data-color-name="Orange Accent" data-hex="#D85A30" data-oklch="oklch(65% 0.18 47)" data-rgb="rgb(216 90 48)">
+            <div class="swatch" style="background:#D85A30"></div>
+            <strong>Orange 500</strong>
+            <div class="copy-group">
+              <button class="copy-value" data-copy="hex">Copy HEX</button>
+              <button class="copy-value" data-copy="oklch">Copy OKLCH</button>
+              <button class="copy-value" data-copy="rgb">Copy RGB</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel grid grid-2">
+        <article>
+          <h2><span class="split-base">Standard</span> <span class="split-accent">Semantics</span></h2>
+          <p>Dedicated warning/error/success colors are intentionally separate from accent families.</p>
+          <p>
+            <span class="badge" style="background:var(--standard-error-2); color:#fff">Error</span>
+            <span class="badge" style="background:var(--standard-warning-2); color:#201300">Warning</span>
+            <span class="badge" style="background:var(--standard-success-2); color:#092212">Success</span>
+          </p>
+          <p class="small-note">Use 300 for subtle backgrounds, 500 for default indicators, and 700 for high-priority states.</p>
+        </article>
+        <article>
+          <h2><span class="split-base">Theme</span> <span class="split-accent">Preview</span></h2>
+          <div class="preview-card">
+            <h3><span class="split-base">Code</span> <span class="split-accent">Editor</span></h3>
+            <p><kbd>Cmd</kbd> + <kbd>K</kbd> search panel on Surface Two with Accent highlights.</p>
+            <button class="button-primary">Primary Action</button>
+            <button class="button-ghost">Secondary Action</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2><span class="split-base">Implementation</span> <span class="split-accent">Guidance</span></h2>
+        <ul>
+          <li><strong>Web apps:</strong> map base tokens to page/layout surfaces and accent tokens to links, focus rings, and CTAs.</li>
+          <li><strong>VS Code / IDEs:</strong> set editor background from <code>--bg-color</code>, foreground from <code>--text-color</code>, and syntax operators from accent 500/600.</li>
+          <li><strong>Data viz:</strong> use blue/teal/orange/red accent families as categorical series while keeping semantic colors for alerts only.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      const root = document.documentElement;
+      const themeSelect = document.getElementById('theme-select');
+      const accentSelect = document.getElementById('accent-select');
+
+      const savedTheme = localStorage.getItem('spectrum-theme');
+      const savedAccent = localStorage.getItem('spectrum-accent');
+
+      if (savedTheme) {
+        root.dataset.theme = savedTheme;
+        themeSelect.value = savedTheme;
+      }
+
+      if (savedAccent) {
+        root.dataset.accent = savedAccent;
+        accentSelect.value = savedAccent;
+      }
+
+      themeSelect.addEventListener('change', (event) => {
+        root.dataset.theme = event.target.value;
+        localStorage.setItem('spectrum-theme', event.target.value);
+      });
+
+      accentSelect.addEventListener('change', (event) => {
+        root.dataset.accent = event.target.value;
+        localStorage.setItem('spectrum-accent', event.target.value);
+      });
+
+      document.querySelectorAll('.copy-value').forEach((button) => {
+        button.addEventListener('click', async () => {
+          const swatch = button.closest('[data-hex]');
+          const format = button.dataset.copy;
+          const value = swatch.dataset[format];
+          await navigator.clipboard.writeText(value);
+          const previous = button.textContent;
+          button.textContent = 'Copied';
+          setTimeout(() => {
+            button.textContent = previous;
+          }, 900);
+        });
+      });
+    </script>
+  </body>
+</html>

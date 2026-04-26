@@ -1,0 +1,22 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="spectrum-logo-title spectrum-logo-desc">
+  <title id="spectrum-logo-title">Spectrum S logo</title>
+  <desc id="spectrum-logo-desc">A minimalist geometric S mark with a blue accent.</desc>
+  <defs>
+    <linearGradient id="spectrum-blue" x1="28" y1="22" x2="102" y2="106" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5C93CC"/>
+      <stop offset="0.52" stop-color="#2364AA"/>
+      <stop offset="1" stop-color="#163D69"/>
+    </linearGradient>
+    <style>
+      .base-stroke { stroke: #141115; }
+      @media (prefers-color-scheme: dark) {
+        .base-stroke { stroke: #F4EDED; }
+      }
+    </style>
+  </defs>
+
+  <path class="base-stroke" d="M88 34C80 26 66.5 22.5 53 25.7C38.4 29.1 29.9 38.4 31.3 49.2C32.7 60.3 44.1 64.6 62.2 68.2C77.7 71.3 84.5 74.4 85.3 81.4C86.2 90.1 77.8 96.8 63.8 98.4C51.3 99.9 39.2 96.3 30.7 88.9" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M88 34C80 26 66.5 22.5 53 25.7C38.4 29.1 29.9 38.4 31.3 49.2C32.7 60.3 44.1 64.6 62.2 68.2C77.7 71.3 84.5 74.4 85.3 81.4C86.2 90.1 77.8 96.8 63.8 98.4C51.3 99.9 39.2 96.3 30.7 88.9" stroke="url(#spectrum-blue)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M96 27L101 44L84 39" stroke="#2364AA" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M27 101L23 84L40 89" stroke="#2364AA" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

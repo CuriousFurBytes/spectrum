@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-accent="blue">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Spectrum design system and color theme specimen.">
+    <title>Spectrum Design System</title>
+    <link rel="stylesheet" href="spectrum.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="site-shell topbar__inner">
+        <a class="brand" href="#main" aria-label="Spectrum home">
+          <img class="brand__logo" src="spectrum-logo.svg" alt="" width="128" height="128">
+        </a>
+
+        <form class="theme-controls" aria-label="Theme controls">
+          <label class="field" for="theme-mode">
+            <span>Mode</span>
+            <select id="theme-mode" name="theme-mode">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+
+          <label class="field" for="accent-color">
+            <span>Accent</span>
+            <select id="accent-color" name="accent-color">
+              <option value="blue">Blue</option>
+              <option value="purple">Purple</option>
+              <option value="green">Green</option>
+              <option value="red">Red</option>
+              <option value="yellow">Yellow</option>
+            </select>
+          </label>
+        </form>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="site-shell hero__grid">
+          <div>
+            <p class="eyebrow">Design system / theme specimen</p>
+            <h1 class="split-heading split-heading--display">
+              <span>Spect</span><span class="split-accent">rum</span>
+            </h1>
+            <p class="lead">
+              Spectrum is a compact palette for editorial interfaces, product dashboards, and code editors. It pairs a warm monochrome base with precise accent scales that can carry brand, state, and syntax without washing out the workspace.
+            </p>
+          </div>
+
+          <dl class="hero__meta">
+            <div class="meta-row">
+              <dt>Base</dt>
+              <dd>Black anchors dark UI, white anchors light UI, and the middle six shades handle elevation, dividers, text hierarchy, and disabled states.</dd>
+            </div>
+            <div class="meta-row">
+              <dt>Accent</dt>
+              <dd>Blue, purple, green, red, and yellow each include dark, primary, mid, soft, and faint options for interaction design.</dd>
+            </div>
+            <div class="meta-row">
+              <dt>Format</dt>
+              <dd>Every swatch includes copy buttons for HEX, RGB, and OKLCH values, plus matching CSS variables in <code>spectrum.css</code>.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section section--panel" aria-labelledby="theme-specimen">
+        <div class="site-shell">
+          <div class="section__header">
+            <h2 id="theme-specimen" class="split-heading split-heading--section">
+              <span>Theme</span> <span class="split-accent">Specimen</span>
+            </h2>
+            <p>
+              These components show the theme under normal product pressure: a headline, body copy, controls, status rows, and code. Switch mode or accent from the top menu to see the semantic tokens respond.
+            </p>
+          </div>
+
+          <div class="specimen-grid">
+            <article class="sample-card">
+              <h3 class="split-heading">
+                <span>Primary</span> <span class="split-accent">Actions</span>
+              </h3>
+              <p>Use the active accent for focused actions, selected tabs, active navigation, links, chart highlights, and status emphasis.</p>
+              <div class="button-row">
+                <a class="button button--primary" href="#color-system">View palette</a>
+                <a class="button button--secondary" href="#usage">Usage notes</a>
+                <a class="button button--ghost" href="#tokens">Token map</a>
+              </div>
+            </article>
+
+            <article class="sample-card">
+              <h3 class="split-heading">
+                <span>Typography</span> <span class="split-accent">Rhythm</span>
+              </h3>
+              <div class="type-stack">
+                <strong>Spectrum treats color as interface grammar.</strong>
+                <small>Monaspace Argon gives prose, code, and labels the same engineered voice.</small>
+              </div>
+              <p>Headings split between base foreground and the active accent, while paragraphs stay in muted base tones for steady reading.</p>
+            </article>
+
+            <article class="sample-card">
+              <h3 class="split-heading">
+                <span>Product</span> <span class="split-accent">Surface</span>
+              </h3>
+              <ul class="sample-list">
+                <li><span>Navigation active state</span><span class="status-dot" aria-hidden="true"></span></li>
+                <li><span>Panel border and divider</span><span>Base middle</span></li>
+                <li><span>Critical alert family</span><span>Red scale</span></li>
+                <li><span>Positive state family</span><span>Green scale</span></li>
+              </ul>
+            </article>
+
+            <article class="sample-card">
+              <h3 class="split-heading">
+                <span>Code</span> <span class="split-accent">Sample</span>
+              </h3>
+              <pre class="code-sample"><code><span class="token-muted">:root</span> {
+  --page: <span class="token-accent">var(--color-background)</span>;
+  --text: <span class="token-accent">var(--color-foreground)</span>;
+  --accent: <span class="token-accent">var(--accent-primary)</span>;
+}</code></pre>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="color-system" class="section" aria-labelledby="color-system-title">
+        <div class="site-shell">
+          <div class="section__header">
+            <h2 id="color-system-title" class="split-heading split-heading--section">
+              <span>Color</span> <span class="split-accent">System</span>
+            </h2>
+            <p>
+              The base scale moves from application chrome to reading surfaces. Accent scales move from command-line depth to faint backgrounds, keeping the primary color in the middle of each family.
+            </p>
+          </div>
+
+          <div class="palette-section" aria-labelledby="base-range">
+            <h3 id="base-range" class="split-heading split-heading--subsection">
+              <span>Base</span> <span class="split-accent">Range</span>
+            </h3>
+            <div class="color-grid">
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--base-black);">
+                  <code>--base-black</code>
+                  <strong>#141115</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Base</span> <span class="split-accent">Black</span></h3>
+                  <span>Dark background / light-mode foreground</span>
+                </div>
+                <p>The anchor for dark application shells, editor canvases, terminals, and primary text when the theme is light.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#141115"><span>HEX</span><code>#141115</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(20, 17, 21)"><span>RGB</span><code>rgb(20, 17, 21)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(18.31% 0.0093 317.68)"><span>OKLCH</span><code>oklch(18.31% 0.0093 317.68)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--base-obsidian);">
+                  <code>--base-obsidian</code>
+                  <strong>#2E2B2E</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Base</span> <span class="split-accent">Obsidian</span></h3>
+                  <span>Dark elevated surface</span>
+                </div>
+                <p>Use for dark cards, sidebars, command palettes, editor gutters, and subtle surfaces that sit above black.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#2E2B2E"><span>HEX</span><code>#2E2B2E</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(46, 43, 46)"><span>RGB</span><code>rgb(46, 43, 46)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(29.34% 0.0068 325.75)"><span>OKLCH</span><code>oklch(29.34% 0.0068 325.75)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--base-graphite);">
+                  <code>--base-graphite</code>
+                  <strong>#4B474A</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Base</span> <span class="split-accent">Graphite</span></h3>
+                  <span>Dark border / secondary surface</span>
+                </div>
+                <p>A practical divider, focus outline, muted button background, and secondary editor panel color in dark mode.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#4B474A"><span>HEX</span><code>#4B474A</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(75, 71, 74)"><span>RGB</span><code>rgb(75, 71, 74)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(40.29% 0.0072 334.18)"><span>OKLCH</span><code>oklch(40.29% 0.0072 334.18)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--base-slate);">
+                  <code>--base-slate</code>
+                  <strong>#6A6568</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Base</span> <span class="split-accent">Slate</span></h3>
+                  <span>Muted foreground</span>
+                </div>
+                <p>Reliable for secondary text, labels, timestamps, inline metadata, inactive tabs, and subdued interface copy.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#6A6568"><span>HEX</span><code>#6A6568</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(106, 101, 104)"><span>RGB</span><code>rgb(106, 101, 104)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(51.23% 0.0078 340.58)"><span>OKLCH</span><code>oklch(51.23% 0.0078 340.58)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--base-smoke);">
+                  <code>--base-smoke</code>
+                  <strong>#8A8587</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Base</span> <span class="split-accent">Smoke</span></h3>
+                  <span>Disabled text / quiet borders</span>
+                </div>
+                <p>The midpoint for disabled controls, placeholder text, low-emphasis dividers, and neutral chart scaffolding.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#8A8587"><span>HEX</span><code>#8A8587</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(138, 133, 135)"><span>RGB</span><code>rgb(138, 133, 135)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(62.17% 0.0067 350.93)"><span>OKLCH</span><code>oklch(62.17% 0.0067 350.93)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--base-silver);">
+                  <code>--base-silver</code>
+                  <strong>#ACA6A8</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Base</span> <span class="split-accent">Silver</span></h3>
+                  <span>Light-mode subtle surface</span>
+                </div>
+                <p>Use for hover fills, table striping, inactive UI rails, and pale text over dark backgrounds.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#ACA6A8"><span>HEX</span><code>#ACA6A8</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(172, 166, 168)"><span>RGB</span><code>rgb(172, 166, 168)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(73.08% 0.0074 354.88)"><span>OKLCH</span><code>oklch(73.08% 0.0074 354.88)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--base-pearl);">
+                  <code>--base-pearl</code>
+                  <strong>#D0C9CA</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Base</span> <span class="split-accent">Pearl</span></h3>
+                  <span>Light border / raised plane</span>
+                </div>
+                <p>Ideal for light-mode borders, alternate panels, selected rows, and readable code-block shells.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#D0C9CA"><span>HEX</span><code>#D0C9CA</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(208, 201, 202)"><span>RGB</span><code>rgb(208, 201, 202)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(84.18% 0.0079 7.32)"><span>OKLCH</span><code>oklch(84.18% 0.0079 7.32)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--base-white);">
+                  <code>--base-white</code>
+                  <strong>#F4EDED</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Base</span> <span class="split-accent">White</span></h3>
+                  <span>Light background / dark-mode foreground</span>
+                </div>
+                <p>The warm paper tone for documents and product surfaces, and the primary foreground for dark theme readability.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#F4EDED"><span>HEX</span><code>#F4EDED</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(244, 237, 237)"><span>RGB</span><code>rgb(244, 237, 237)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(95.15% 0.0076 17.29)"><span>OKLCH</span><code>oklch(95.15% 0.0076 17.29)</code></button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="palette-section" aria-labelledby="blue-scale">
+            <h3 id="blue-scale" class="split-heading split-heading--subsection">
+              <span>Blue</span> <span class="split-accent">Scale</span>
+            </h3>
+            <div class="color-grid">
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--blue-midnight);">
+                  <code>--blue-midnight</code>
+                  <strong>#0B1F35</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Blue</span> <span class="split-accent">Midnight</span></h3>
+                  <span>Deep information surface</span>
+                </div>
+                <p>Use for dark blue panels, selection backplates, terminal accents, and dense IDE navigation surfaces.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#0B1F35"><span>HEX</span><code>#0B1F35</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(11, 31, 53)"><span>RGB</span><code>rgb(11, 31, 53)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(23.56% 0.0499 252.60)"><span>OKLCH</span><code>oklch(23.56% 0.0499 252.60)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--blue-depth);">
+                  <code>--blue-depth</code>
+                  <strong>#163D69</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Blue</span> <span class="split-accent">Depth</span></h3>
+                  <span>Active chrome</span>
+                </div>
+                <p>Strong enough for editor activity bars, active tabs, highlighted rows, and chart segments on light surfaces.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#163D69"><span>HEX</span><code>#163D69</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(22, 61, 105)"><span>RGB</span><code>rgb(22, 61, 105)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(35.70% 0.0882 253.75)"><span>OKLCH</span><code>oklch(35.70% 0.0882 253.75)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--blue-primary);">
+                  <code>--blue-primary</code>
+                  <strong>#2364AA</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Blue</span> <span class="split-accent">Primary</span></h3>
+                  <span>Default action color</span>
+                </div>
+                <p>The baseline brand/action blue for links, primary buttons, selected states, and informational status.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#2364AA"><span>HEX</span><code>#2364AA</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(35, 100, 170)"><span>RGB</span><code>rgb(35, 100, 170)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(49.92% 0.1292 253.30)"><span>OKLCH</span><code>oklch(49.92% 0.1292 253.30)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--blue-river);">
+                  <code>--blue-river</code>
+                  <strong>#5C93CC</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Blue</span> <span class="split-accent">River</span></h3>
+                  <span>Interactive hover</span>
+                </div>
+                <p>Use for hover states, focus rings on dark backgrounds, inline editor markers, and secondary action fills.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#5C93CC"><span>HEX</span><code>#5C93CC</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(92, 147, 204)"><span>RGB</span><code>rgb(92, 147, 204)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(64.90% 0.1039 250.51)"><span>OKLCH</span><code>oklch(64.90% 0.1039 250.51)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--blue-haze);">
+                  <code>--blue-haze</code>
+                  <strong>#A0C3E6</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Blue</span> <span class="split-accent">Haze</span></h3>
+                  <span>Soft highlight</span>
+                </div>
+                <p>Useful for pale callouts, selection fills, pill backgrounds, and non-blocking information messages.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#A0C3E6"><span>HEX</span><code>#A0C3E6</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(160, 195, 230)"><span>RGB</span><code>rgb(160, 195, 230)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(80.36% 0.0625 248.61)"><span>OKLCH</span><code>oklch(80.36% 0.0625 248.61)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--blue-frost);">
+                  <code>--blue-frost</code>
+                  <strong>#DDEBFA</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Blue</span> <span class="split-accent">Frost</span></h3>
+                  <span>Faint background</span>
+                </div>
+                <p>The lightest blue for large tinted panels, documentation notes, empty states, and chart area fills.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#DDEBFA"><span>HEX</span><code>#DDEBFA</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(221, 235, 250)"><span>RGB</span><code>rgb(221, 235, 250)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(93.41% 0.0253 249.96)"><span>OKLCH</span><code>oklch(93.41% 0.0253 249.96)</code></button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="palette-section" aria-labelledby="purple-scale">
+            <h3 id="purple-scale" class="split-heading split-heading--subsection">
+              <span>Purple</span> <span class="split-accent">Scale</span>
+            </h3>
+            <div class="color-grid">
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--purple-blackberry);">
+                  <code>--purple-blackberry</code>
+                  <strong>#15101F</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Purple</span> <span class="split-accent">Blackberry</span></h3>
+                  <span>Private workspace depth</span>
+                </div>
+                <p>Use for deep product areas, modal scrims, editor backgrounds, and low-light creative tools.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#15101F"><span>HEX</span><code>#15101F</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(21, 16, 31)"><span>RGB</span><code>rgb(21, 16, 31)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(18.73% 0.0307 298.74)"><span>OKLCH</span><code>oklch(18.73% 0.0307 298.74)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--purple-primary);">
+                  <code>--purple-primary</code>
+                  <strong>#1E1536</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Purple</span> <span class="split-accent">Primary</span></h3>
+                  <span>Original deep accent</span>
+                </div>
+                <p>A restrained primary for dark brands, premium sections, IDE chrome, and command surfaces.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#1E1536"><span>HEX</span><code>#1E1536</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(30, 21, 54)"><span>RGB</span><code>rgb(30, 21, 54)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(22.67% 0.0621 293.40)"><span>OKLCH</span><code>oklch(22.67% 0.0621 293.40)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--purple-royal);">
+                  <code>--purple-royal</code>
+                  <strong>#3E2A68</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Purple</span> <span class="split-accent">Royal</span></h3>
+                  <span>Secondary accent</span>
+                </div>
+                <p>Use for selected sidebar items, chart categories, badges, and syntax scopes that need depth.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#3E2A68"><span>HEX</span><code>#3E2A68</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(62, 42, 104)"><span>RGB</span><code>rgb(62, 42, 104)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(34.30% 0.1044 295.22)"><span>OKLCH</span><code>oklch(34.30% 0.1044 295.22)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--purple-orchid);">
+                  <code>--purple-orchid</code>
+                  <strong>#7051A5</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Purple</span> <span class="split-accent">Orchid</span></h3>
+                  <span>Readable accent</span>
+                </div>
+                <p>Best for purple links, focus states, data visualization, and accents that must remain legible.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#7051A5"><span>HEX</span><code>#7051A5</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(112, 81, 165)"><span>RGB</span><code>rgb(112, 81, 165)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(50.68% 0.1312 298.66)"><span>OKLCH</span><code>oklch(50.68% 0.1312 298.66)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--purple-lavender);">
+                  <code>--purple-lavender</code>
+                  <strong>#B4A0D7</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Purple</span> <span class="split-accent">Lavender</span></h3>
+                  <span>Soft creative tint</span>
+                </div>
+                <p>Use for gentle backgrounds, highlighted notes, onboarding surfaces, and purple text in dark mode.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#B4A0D7"><span>HEX</span><code>#B4A0D7</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(180, 160, 215)"><span>RGB</span><code>rgb(180, 160, 215)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(74.23% 0.0808 301.11)"><span>OKLCH</span><code>oklch(74.23% 0.0808 301.11)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--purple-frost);">
+                  <code>--purple-frost</code>
+                  <strong>#E9E2F7</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Purple</span> <span class="split-accent">Frost</span></h3>
+                  <span>Faint background</span>
+                </div>
+                <p>The calmest purple for docs, empty states, large panels, and layered UI that should feel polished.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#E9E2F7"><span>HEX</span><code>#E9E2F7</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(233, 226, 247)"><span>RGB</span><code>rgb(233, 226, 247)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(92.45% 0.0291 300.99)"><span>OKLCH</span><code>oklch(92.45% 0.0291 300.99)</code></button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="palette-section" aria-labelledby="green-scale">
+            <h3 id="green-scale" class="split-heading split-heading--subsection">
+              <span>Green</span> <span class="split-accent">Scale</span>
+            </h3>
+            <div class="color-grid">
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--green-evergreen);">
+                  <code>--green-evergreen</code>
+                  <strong>#073126</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Green</span> <span class="split-accent">Evergreen</span></h3>
+                  <span>Success depth</span>
+                </div>
+                <p>Use for dark success panels, secure states, environmental dashboards, and terminal success accents.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#073126"><span>HEX</span><code>#073126</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(7, 49, 38)"><span>RGB</span><code>rgb(7, 49, 38)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(28.15% 0.0495 171.22)"><span>OKLCH</span><code>oklch(28.15% 0.0495 171.22)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--green-forest);">
+                  <code>--green-forest</code>
+                  <strong>#10664E</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Green</span> <span class="split-accent">Forest</span></h3>
+                  <span>Positive text</span>
+                </div>
+                <p>Strong enough for success labels, confirmed statuses, uptime indicators, and charts on light backgrounds.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#10664E"><span>HEX</span><code>#10664E</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(16, 102, 78)"><span>RGB</span><code>rgb(16, 102, 78)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(45.59% 0.0865 168.50)"><span>OKLCH</span><code>oklch(45.59% 0.0865 168.50)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--green-primary);">
+                  <code>--green-primary</code>
+                  <strong>#1D9E75</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Green</span> <span class="split-accent">Primary</span></h3>
+                  <span>Default success color</span>
+                </div>
+                <p>The main positive state for completion, connection, availability, savings, and healthy metrics.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#1D9E75"><span>HEX</span><code>#1D9E75</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(29, 158, 117)"><span>RGB</span><code>rgb(29, 158, 117)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(62.31% 0.1232 165.50)"><span>OKLCH</span><code>oklch(62.31% 0.1232 165.50)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--green-mint);">
+                  <code>--green-mint</code>
+                  <strong>#57C19D</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Green</span> <span class="split-accent">Mint</span></h3>
+                  <span>Accessible highlight</span>
+                </div>
+                <p>Use for hover states, positive focus rings, dark-mode success text, and highlighted rows.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#57C19D"><span>HEX</span><code>#57C19D</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(87, 193, 157)"><span>RGB</span><code>rgb(87, 193, 157)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(73.84% 0.1123 168.21)"><span>OKLCH</span><code>oklch(73.84% 0.1123 168.21)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--green-seafoam);">
+                  <code>--green-seafoam</code>
+                  <strong>#9DE0C9</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Green</span> <span class="split-accent">Seafoam</span></h3>
+                  <span>Soft success fill</span>
+                </div>
+                <p>Great for success callouts, progress backgrounds, onboarding confirmations, and calm charts.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#9DE0C9"><span>HEX</span><code>#9DE0C9</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(157, 224, 201)"><span>RGB</span><code>rgb(157, 224, 201)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(85.54% 0.0749 171.09)"><span>OKLCH</span><code>oklch(85.54% 0.0749 171.09)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--green-frost);">
+                  <code>--green-frost</code>
+                  <strong>#D9F5EB</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Green</span> <span class="split-accent">Frost</span></h3>
+                  <span>Faint background</span>
+                </div>
+                <p>The lightest success tone for large confirmation areas, tables, docs, and empty positive states.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#D9F5EB"><span>HEX</span><code>#D9F5EB</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(217, 245, 235)"><span>RGB</span><code>rgb(217, 245, 235)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(94.71% 0.0321 172.12)"><span>OKLCH</span><code>oklch(94.71% 0.0321 172.12)</code></button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="palette-section" aria-labelledby="red-scale">
+            <h3 id="red-scale" class="split-heading split-heading--subsection">
+              <span>Red</span> <span class="split-accent">Scale</span>
+            </h3>
+            <div class="color-grid">
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--red-oxblood);">
+                  <code>--red-oxblood</code>
+                  <strong>#4D1117</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Red</span> <span class="split-accent">Oxblood</span></h3>
+                  <span>Critical depth</span>
+                </div>
+                <p>Use for severe alert panels, destructive dark surfaces, failed terminal states, and danger backplates.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#4D1117"><span>HEX</span><code>#4D1117</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(77, 17, 23)"><span>RGB</span><code>rgb(77, 17, 23)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(28.43% 0.0893 19.50)"><span>OKLCH</span><code>oklch(28.43% 0.0893 19.50)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--red-ruby);">
+                  <code>--red-ruby</code>
+                  <strong>#A51F29</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Red</span> <span class="split-accent">Ruby</span></h3>
+                  <span>Error text</span>
+                </div>
+                <p>Use for destructive text on light surfaces, validation errors, failed test counts, and alert icons.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#A51F29"><span>HEX</span><code>#A51F29</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(165, 31, 41)"><span>RGB</span><code>rgb(165, 31, 41)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(47.11% 0.1686 23.34)"><span>OKLCH</span><code>oklch(47.11% 0.1686 23.34)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--red-primary);">
+                  <code>--red-primary</code>
+                  <strong>#E63946</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Red</span> <span class="split-accent">Primary</span></h3>
+                  <span>Default destructive color</span>
+                </div>
+                <p>The main alert color for errors, destructive actions, outage states, and urgent data marks.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#E63946"><span>HEX</span><code>#E63946</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(230, 57, 70)"><span>RGB</span><code>rgb(230, 57, 70)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(61.22% 0.2082 22.24)"><span>OKLCH</span><code>oklch(61.22% 0.2082 22.24)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--red-coral);">
+                  <code>--red-coral</code>
+                  <strong>#EF737C</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Red</span> <span class="split-accent">Coral</span></h3>
+                  <span>Warning highlight</span>
+                </div>
+                <p>Use for hover states, inline validation backgrounds, dark-mode alert text, and urgent accents.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#EF737C"><span>HEX</span><code>#EF737C</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(239, 115, 124)"><span>RGB</span><code>rgb(239, 115, 124)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(70.32% 0.1529 17.36)"><span>OKLCH</span><code>oklch(70.32% 0.1529 17.36)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--red-blush);">
+                  <code>--red-blush</code>
+                  <strong>#F6ABB0</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Red</span> <span class="split-accent">Blush</span></h3>
+                  <span>Soft alert fill</span>
+                </div>
+                <p>Use for recoverable error panels, form validation backgrounds, and charts that need warmth without alarm.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#F6ABB0"><span>HEX</span><code>#F6ABB0</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(246, 171, 176)"><span>RGB</span><code>rgb(246, 171, 176)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(81.42% 0.0886 14.81)"><span>OKLCH</span><code>oklch(81.42% 0.0886 14.81)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--red-frost);">
+                  <code>--red-frost</code>
+                  <strong>#FBDCDD</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Red</span> <span class="split-accent">Frost</span></h3>
+                  <span>Faint background</span>
+                </div>
+                <p>The lightest red for warning zones, inactive destructive controls, and editorial annotations.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#FBDCDD"><span>HEX</span><code>#FBDCDD</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(251, 220, 221)"><span>RGB</span><code>rgb(251, 220, 221)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(92.04% 0.0344 15.58)"><span>OKLCH</span><code>oklch(92.04% 0.0344 15.58)</code></button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="palette-section" aria-labelledby="yellow-scale">
+            <h3 id="yellow-scale" class="split-heading split-heading--subsection">
+              <span>Yellow</span> <span class="split-accent">Scale</span>
+            </h3>
+            <div class="color-grid">
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--yellow-umber);">
+                  <code>--yellow-umber</code>
+                  <strong>#4A3A00</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Yellow</span> <span class="split-accent">Umber</span></h3>
+                  <span>Warning depth</span>
+                </div>
+                <p>Use for warning text on light backgrounds, terminal caution states, and strong chart labels.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#4A3A00"><span>HEX</span><code>#4A3A00</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(74, 58, 0)"><span>RGB</span><code>rgb(74, 58, 0)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(35.56% 0.0727 91.36)"><span>OKLCH</span><code>oklch(35.56% 0.0727 91.36)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" style="--swatch: var(--yellow-gold);">
+                  <code>--yellow-gold</code>
+                  <strong>#A88700</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Yellow</span> <span class="split-accent">Gold</span></h3>
+                  <span>Readable warning accent</span>
+                </div>
+                <p>Best for yellow links, caution badges, highlighted editor lines, and metrics that need attention.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#A88700"><span>HEX</span><code>#A88700</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(168, 135, 0)"><span>RGB</span><code>rgb(168, 135, 0)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(63.62% 0.1301 91.42)"><span>OKLCH</span><code>oklch(63.62% 0.1301 91.42)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--yellow-primary);">
+                  <code>--yellow-primary</code>
+                  <strong>#FFCF00</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Yellow</span> <span class="split-accent">Primary</span></h3>
+                  <span>Default warning color</span>
+                </div>
+                <p>The main caution and attention color for notices, pins, highlights, active stars, and warm chart marks.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#FFCF00"><span>HEX</span><code>#FFCF00</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(255, 207, 0)"><span>RGB</span><code>rgb(255, 207, 0)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(87.10% 0.1781 91.77)"><span>OKLCH</span><code>oklch(87.10% 0.1781 91.77)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--yellow-sun);">
+                  <code>--yellow-sun</code>
+                  <strong>#FFDE46</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Yellow</span> <span class="split-accent">Sun</span></h3>
+                  <span>Bright highlight</span>
+                </div>
+                <p>Use for dark-mode warning text, hover fills, callout borders, and high-visibility chart overlays.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#FFDE46"><span>HEX</span><code>#FFDE46</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(255, 222, 70)"><span>RGB</span><code>rgb(255, 222, 70)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(90.30% 0.1650 96.43)"><span>OKLCH</span><code>oklch(90.30% 0.1650 96.43)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--yellow-cream);">
+                  <code>--yellow-cream</code>
+                  <strong>#FFE98A</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Yellow</span> <span class="split-accent">Cream</span></h3>
+                  <span>Soft warning fill</span>
+                </div>
+                <p>Use for note panels, paused states, calendar highlights, and large warning backgrounds.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#FFE98A"><span>HEX</span><code>#FFE98A</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(255, 233, 138)"><span>RGB</span><code>rgb(255, 233, 138)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(93.20% 0.1180 96.68)"><span>OKLCH</span><code>oklch(93.20% 0.1180 96.68)</code></button>
+                </div>
+              </article>
+
+              <article class="color-card">
+                <div class="swatch" data-ink="dark" style="--swatch: var(--yellow-frost);">
+                  <code>--yellow-frost</code>
+                  <strong>#FFF6CC</strong>
+                </div>
+                <div class="swatch-name">
+                  <h3 class="split-heading"><span>Yellow</span> <span class="split-accent">Frost</span></h3>
+                  <span>Faint background</span>
+                </div>
+                <p>The lightest warning tone for documentation tips, row highlights, badges, and large quiet notices.</p>
+                <div class="copy-grid">
+                  <button class="value-button" type="button" data-copy="#FFF6CC"><span>HEX</span><code>#FFF6CC</code></button>
+                  <button class="value-button" type="button" data-copy="rgb(255, 246, 204)"><span>RGB</span><code>rgb(255, 246, 204)</code></button>
+                  <button class="value-button" type="button" data-copy="oklch(96.97% 0.0551 97.26)"><span>OKLCH</span><code>oklch(96.97% 0.0551 97.26)</code></button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="usage" class="section section--panel" aria-labelledby="usage-title">
+        <div class="site-shell">
+          <div class="section__header">
+            <h2 id="usage-title" class="split-heading split-heading--section">
+              <span>Applied</span> <span class="split-accent">Usage</span>
+            </h2>
+            <p>
+              Spectrum works best when the base scale does the structural work and accent colors carry meaning. Reserve the strongest accents for decisions, states, and orientation.
+            </p>
+          </div>
+
+          <div class="usage-grid">
+            <article class="usage-card">
+              <h3 class="split-heading"><span>Web</span> <span class="split-accent">Apps</span></h3>
+              <p>Use base white/black as the page pair, middle base shades for borders and surfaces, and the chosen accent for primary actions.</p>
+              <ul>
+                <li>Primary buttons: <code>--accent-control</code></li>
+                <li>Links and display text: <code>--accent-display</code></li>
+                <li>Cards and panels: <code>--color-surface</code></li>
+              </ul>
+            </article>
+
+            <article class="usage-card">
+              <h3 class="split-heading"><span>VS Code</span> <span class="split-accent">IDE</span></h3>
+              <p>Map the base scale to the editor shell, then assign accent families to syntax and status states.</p>
+              <ul>
+                <li><code>editor.background</code>: <code>--base-black</code></li>
+                <li><code>editor.foreground</code>: <code>--base-white</code></li>
+                <li><code>activityBar.activeBorder</code>: active accent primary</li>
+              </ul>
+            </article>
+
+            <article class="usage-card">
+              <h3 class="split-heading"><span>Data</span> <span class="split-accent">Products</span></h3>
+              <p>Blue should handle neutral information, green success, red risk, yellow attention, and purple special or creative categories.</p>
+              <ul>
+                <li>Use shade 3 for categorical marks.</li>
+                <li>Use shade 5 or 6 for background fills.</li>
+                <li>Use shade 1 or 2 for labels on light charts.</li>
+              </ul>
+            </article>
+
+            <article class="usage-card">
+              <h3 class="split-heading"><span>Docs</span> <span class="split-accent">Sites</span></h3>
+              <p>Keep paragraphs neutral and use faint accent panels for notes, warnings, success messages, and code annotations.</p>
+              <ul>
+                <li>Information notes: blue frost or haze.</li>
+                <li>Warnings: yellow frost or cream.</li>
+                <li>Errors: red frost with ruby text.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="tokens" class="section" aria-labelledby="tokens-title">
+        <div class="site-shell">
+          <div class="section__header">
+            <h2 id="tokens-title" class="split-heading split-heading--section">
+              <span>Token</span> <span class="split-accent">Map</span>
+            </h2>
+            <p>
+              Use raw variables when you need a specific palette value. Use semantic variables when the interface should follow the selected theme mode and accent.
+            </p>
+          </div>
+
+          <div class="token-table" role="table" aria-label="Recommended Spectrum semantic tokens">
+            <div class="token-row" role="row">
+              <strong role="cell">Page background</strong>
+              <code role="cell">--color-background</code>
+              <span role="cell">Base white in light mode, base black in dark mode.</span>
+            </div>
+            <div class="token-row" role="row">
+              <strong role="cell">Primary foreground</strong>
+              <code role="cell">--color-foreground</code>
+              <span role="cell">Base black in light mode, base white in dark mode.</span>
+            </div>
+            <div class="token-row" role="row">
+              <strong role="cell">Surface</strong>
+              <code role="cell">--color-surface</code>
+              <span role="cell">The default card, panel, and input background.</span>
+            </div>
+            <div class="token-row" role="row">
+              <strong role="cell">Accent primary</strong>
+              <code role="cell">--accent-primary</code>
+              <span role="cell">The exact primary from the selected accent family.</span>
+            </div>
+            <div class="token-row" role="row">
+              <strong role="cell">Accent display</strong>
+              <code role="cell">--accent-display</code>
+              <span role="cell">A readable accent for headings and links in the current mode.</span>
+            </div>
+            <div class="token-row" role="row">
+              <strong role="cell">Accent control</strong>
+              <code role="cell">--accent-control</code>
+              <span role="cell">The chosen accent tuned for buttons, toggles, and focus states.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="site-shell">
+        <p>Spectrum design system. Built from the supplied base and primary colors.</p>
+        <p id="copy-status" aria-live="polite"></p>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const modeSelect = document.querySelector("#theme-mode");
+        const accentSelect = document.querySelector("#accent-color");
+        const copyStatus = document.querySelector("#copy-status");
+
+        const savedMode = localStorage.getItem("spectrum-mode") || "light";
+        const savedAccent = localStorage.getItem("spectrum-accent") || "blue";
+
+        const setTheme = () => {
+          root.dataset.theme = modeSelect.value;
+          root.dataset.accent = accentSelect.value;
+          localStorage.setItem("spectrum-mode", modeSelect.value);
+          localStorage.setItem("spectrum-accent", accentSelect.value);
+        };
+
+        const copyText = async (text) => {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+            return;
+          }
+
+          const input = document.createElement("textarea");
+          input.value = text;
+          input.setAttribute("readonly", "");
+          input.style.position = "fixed";
+          input.style.opacity = "0";
+          document.body.append(input);
+          input.select();
+          document.execCommand("copy");
+          input.remove();
+        };
+
+        modeSelect.value = savedMode;
+        accentSelect.value = savedAccent;
+        setTheme();
+
+        modeSelect.addEventListener("change", setTheme);
+        accentSelect.addEventListener("change", setTheme);
+
+        document.querySelectorAll("[data-copy]").forEach((button) => {
+          button.addEventListener("click", async () => {
+            await copyText(button.dataset.copy);
+            document.querySelectorAll("[data-copied='true']").forEach((copiedButton) => {
+              copiedButton.dataset.copied = "false";
+            });
+            button.dataset.copied = "true";
+            copyStatus.textContent = `Copied ${button.dataset.copy}`;
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
